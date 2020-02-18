@@ -7,16 +7,20 @@ Method | HTTP request | Description
 [**create_roles**](RoleApi.md#create_roles) | **POST** /roles/ | Create a roles for a tenant
 [**delete_role**](RoleApi.md#delete_role) | **DELETE** /roles/{uuid}/ | Delete a role in the tenant
 [**get_role**](RoleApi.md#get_role) | **GET** /roles/{uuid}/ | Get a role in the tenant
+[**get_role_access**](RoleApi.md#get_role_access) | **GET** /roles/{uuid}/access/ | Get access for a role in the tenant
 [**list_roles**](RoleApi.md#list_roles) | **GET** /roles/ | List the roles for a tenant
 [**update_role**](RoleApi.md#update_role) | **PUT** /roles/{uuid}/ | Update a Role in the tenant
 
 
-# **create_roles**
+
+## create_roles
+
 > RoleWithAccess create_roles(role_in)
 
 Create a roles for a tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -41,6 +45,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **role_in** | [**RoleIn**](RoleIn.md)| Role to create | 
@@ -55,17 +60,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_role
 
-# **delete_role**
 > delete_role(uuid)
 
 Delete a role in the tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -89,6 +95,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**String**](.md)| ID of role to delete | 
@@ -103,17 +110,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_role
 
-# **get_role**
 > RoleWithAccess get_role(uuid)
 
 Get a role in the tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -138,6 +146,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**String**](.md)| ID of role to get | 
@@ -152,17 +161,75 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_role_access
 
-# **list_roles**
+> InlineResponse2001 get_role_access(uuid, opts)
+
+Get access for a role in the tenant
+
+### Example
+
+```ruby
+# load the gem
+require 'rbac-api-client'
+# setup authorization
+RBACApiClient.configure do |config|
+  # Configure HTTP basic authorization: basic_auth
+  config.username = 'YOUR USERNAME'
+  config.password = 'YOUR PASSWORD'
+end
+
+api_instance = RBACApiClient::RoleApi.new
+uuid = 'uuid_example' # String | ID of the role
+opts = {
+  limit: 10, # Integer | Parameter for selecting the amount of data returned.
+  offset: 0 # Integer | Parameter for selecting the offset of data.
+}
+
+begin
+  #Get access for a role in the tenant
+  result = api_instance.get_role_access(uuid, opts)
+  p result
+rescue RBACApiClient::ApiError => e
+  puts "Exception when calling RoleApi->get_role_access: #{e}"
+end
+```
+
+### Parameters
+
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **uuid** | [**String**](.md)| ID of the role | 
+ **limit** | **Integer**| Parameter for selecting the amount of data returned. | [optional] [default to 10]
+ **offset** | **Integer**| Parameter for selecting the offset of data. | [optional] [default to 0]
+
+### Return type
+
+[**InlineResponse2001**](InlineResponse2001.md)
+
+### Authorization
+
+[basic_auth](../README.md#basic_auth)
+
+### HTTP request headers
+
+- **Content-Type**: Not defined
+- **Accept**: application/json
+
+
+## list_roles
+
 > RolePagination list_roles(opts)
 
 List the roles for a tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -193,6 +260,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| Parameter for selecting the amount of data returned. | [optional] [default to 10]
@@ -211,17 +279,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## update_role
 
-# **update_role**
 > update_role(uuid, role_with_access)
 
 Update a Role in the tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -246,6 +315,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**String**](.md)| ID of role to update | 
@@ -261,8 +331,6 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 

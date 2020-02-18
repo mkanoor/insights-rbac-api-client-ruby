@@ -7,12 +7,15 @@ Method | HTTP request | Description
 [**get_status**](StatusApi.md#get_status) | **GET** /status/ | Obtain server status
 
 
-# **get_status**
+
+## get_status
+
 > Status get_status
 
 Obtain server status
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -35,6 +38,7 @@ end
 ```
 
 ### Parameters
+
 This endpoint does not need any parameter.
 
 ### Return type
@@ -47,8 +51,6 @@ This endpoint does not need any parameter.
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

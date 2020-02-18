@@ -7,12 +7,15 @@ Method | HTTP request | Description
 [**list_principals**](PrincipalApi.md#list_principals) | **GET** /principals/ | List the principals for a tenant
 
 
-# **list_principals**
+
+## list_principals
+
 > PrincipalPagination list_principals(opts)
 
 List the principals for a tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -41,6 +44,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| Parameter for selecting the amount of data returned. | [optional] [default to 10]
@@ -57,8 +61,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
-
-
+- **Content-Type**: Not defined
+- **Accept**: application/json
 

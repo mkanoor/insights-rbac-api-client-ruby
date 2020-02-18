@@ -25,6 +25,7 @@ Then either install the gem locally:
 ```shell
 gem install ./rbac-api-client-1.0.0.gem
 ```
+
 (for development, run `gem install --dev ./rbac-api-client-1.0.0.gem` to install the development dependencies)
 
 or publish the gem to a gem hosting service, e.g. [RubyGems](https://rubygems.org/).
@@ -50,6 +51,7 @@ ruby -Ilib script.rb
 ## Getting Started
 
 Please follow the [installation](#installation) procedure and then run the following code:
+
 ```ruby
 # Load the gem
 require 'rbac-api-client'
@@ -57,20 +59,20 @@ require 'rbac-api-client'
 # Setup authorization
 RBACApiClient.configure do |config|
   # Configure HTTP basic authorization: basic_auth
-  config.username = 'YOUR USERNAME'
-  config.password = 'YOUR PASSWORD'
+  config.username = 'YOUR_USERNAME'
+  config.password = 'YOUR_PASSWORD'
 end
 
 api_instance = RBACApiClient::AccessApi.new
 application = 'application_example' # String | The application name to obtain access for the principal
 opts = {
-  username: 'username_example', # String | Unique username of the principal to obtain access for
-  limit: 10, # Integer | Parameter for selecting the amount of data returned.
+  username: 'username_example', # String | Unique username of the principal to obtain access for (only available for admins, and if supplied, takes precedence over the identity header).
+  limit: 56, # Integer | Parameter for selecting the amount of data returned.
   offset: 0 # Integer | Parameter for selecting the offset of data.
 }
 
 begin
-  #Get the permitted access for a principal in the tenant
+  #Get the permitted access for a principal in the tenant (defaults to principal from the identity header)
   result = api_instance.get_principal_access(application, opts)
   p result
 rescue RBACApiClient::ApiError => e
@@ -85,7 +87,7 @@ All URIs are relative to *http://localhost/api/rbac/v1*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*RBACApiClient::AccessApi* | [**get_principal_access**](docs/AccessApi.md#get_principal_access) | **GET** /access/ | Get the permitted access for a principal in the tenant
+*RBACApiClient::AccessApi* | [**get_principal_access**](docs/AccessApi.md#get_principal_access) | **GET** /access/ | Get the permitted access for a principal in the tenant (defaults to principal from the identity header)
 *RBACApiClient::GroupApi* | [**add_principal_to_group**](docs/GroupApi.md#add_principal_to_group) | **POST** /groups/{uuid}/principals/ | Add a principal to a group in the tenant
 *RBACApiClient::GroupApi* | [**add_role_to_group**](docs/GroupApi.md#add_role_to_group) | **POST** /groups/{uuid}/roles/ | Add a role to a group in the tenant
 *RBACApiClient::GroupApi* | [**create_group**](docs/GroupApi.md#create_group) | **POST** /groups/ | Create a group in a tenant
@@ -105,6 +107,7 @@ Class | Method | HTTP request | Description
 *RBACApiClient::RoleApi* | [**create_roles**](docs/RoleApi.md#create_roles) | **POST** /roles/ | Create a roles for a tenant
 *RBACApiClient::RoleApi* | [**delete_role**](docs/RoleApi.md#delete_role) | **DELETE** /roles/{uuid}/ | Delete a role in the tenant
 *RBACApiClient::RoleApi* | [**get_role**](docs/RoleApi.md#get_role) | **GET** /roles/{uuid}/ | Get a role in the tenant
+*RBACApiClient::RoleApi* | [**get_role_access**](docs/RoleApi.md#get_role_access) | **GET** /roles/{uuid}/access/ | Get access for a role in the tenant
 *RBACApiClient::RoleApi* | [**list_roles**](docs/RoleApi.md#list_roles) | **GET** /roles/ | List the roles for a tenant
 *RBACApiClient::RoleApi* | [**update_role**](docs/RoleApi.md#update_role) | **PUT** /roles/{uuid}/ | Update a Role in the tenant
 *RBACApiClient::StatusApi* | [**get_status**](docs/StatusApi.md#get_status) | **GET** /status/ | Obtain server status
@@ -113,31 +116,44 @@ Class | Method | HTTP request | Description
 ## Documentation for Models
 
  - [RBACApiClient::Access](docs/Access.md)
+ - [RBACApiClient::AccessNoPagination](docs/AccessNoPagination.md)
  - [RBACApiClient::AccessPagination](docs/AccessPagination.md)
+ - [RBACApiClient::AccessPaginationAllOf](docs/AccessPaginationAllOf.md)
  - [RBACApiClient::Error](docs/Error.md)
+ - [RBACApiClient::Error403](docs/Error403.md)
  - [RBACApiClient::Group](docs/Group.md)
  - [RBACApiClient::GroupOut](docs/GroupOut.md)
  - [RBACApiClient::GroupPagination](docs/GroupPagination.md)
+ - [RBACApiClient::GroupPaginationAllOf](docs/GroupPaginationAllOf.md)
  - [RBACApiClient::GroupPrincipalIn](docs/GroupPrincipalIn.md)
  - [RBACApiClient::GroupRoleIn](docs/GroupRoleIn.md)
- - [RBACApiClient::GroupRolesOut](docs/GroupRolesOut.md)
+ - [RBACApiClient::GroupRolesPagination](docs/GroupRolesPagination.md)
  - [RBACApiClient::GroupWithPrincipals](docs/GroupWithPrincipals.md)
+ - [RBACApiClient::GroupWithPrincipalsAllOf](docs/GroupWithPrincipalsAllOf.md)
  - [RBACApiClient::GroupWithPrincipalsAndRoles](docs/GroupWithPrincipalsAndRoles.md)
+ - [RBACApiClient::GroupWithPrincipalsAndRolesAllOf](docs/GroupWithPrincipalsAndRolesAllOf.md)
+ - [RBACApiClient::InlineResponse200](docs/InlineResponse200.md)
+ - [RBACApiClient::InlineResponse2001](docs/InlineResponse2001.md)
  - [RBACApiClient::ListPagination](docs/ListPagination.md)
  - [RBACApiClient::PaginationLinks](docs/PaginationLinks.md)
  - [RBACApiClient::PaginationMeta](docs/PaginationMeta.md)
  - [RBACApiClient::Policy](docs/Policy.md)
  - [RBACApiClient::PolicyExtended](docs/PolicyExtended.md)
+ - [RBACApiClient::PolicyExtendedAllOf](docs/PolicyExtendedAllOf.md)
  - [RBACApiClient::PolicyIn](docs/PolicyIn.md)
+ - [RBACApiClient::PolicyInAllOf](docs/PolicyInAllOf.md)
  - [RBACApiClient::PolicyPagination](docs/PolicyPagination.md)
+ - [RBACApiClient::PolicyPaginationAllOf](docs/PolicyPaginationAllOf.md)
  - [RBACApiClient::Principal](docs/Principal.md)
  - [RBACApiClient::PrincipalIn](docs/PrincipalIn.md)
  - [RBACApiClient::PrincipalOut](docs/PrincipalOut.md)
  - [RBACApiClient::PrincipalPagination](docs/PrincipalPagination.md)
+ - [RBACApiClient::PrincipalPaginationAllOf](docs/PrincipalPaginationAllOf.md)
  - [RBACApiClient::ResourceDefinition](docs/ResourceDefinition.md)
  - [RBACApiClient::ResourceDefinitionFilter](docs/ResourceDefinitionFilter.md)
  - [RBACApiClient::Role](docs/Role.md)
  - [RBACApiClient::RoleIn](docs/RoleIn.md)
+ - [RBACApiClient::RoleInAllOf](docs/RoleInAllOf.md)
  - [RBACApiClient::RoleOut](docs/RoleOut.md)
  - [RBACApiClient::RolePagination](docs/RolePagination.md)
  - [RBACApiClient::RoleWithAccess](docs/RoleWithAccess.md)

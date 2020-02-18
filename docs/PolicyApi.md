@@ -11,12 +11,15 @@ Method | HTTP request | Description
 [**update_policy**](PolicyApi.md#update_policy) | **PUT** /policies/{uuid}/ | Update a policy in the tenant
 
 
-# **create_policies**
+
+## create_policies
+
 > PolicyExtended create_policies(policy_in)
 
 Create a policy in a tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -41,6 +44,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **policy_in** | [**PolicyIn**](PolicyIn.md)| Policy to create | 
@@ -55,17 +59,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
+- **Content-Type**: application/json
+- **Accept**: application/json
 
 
+## delete_policy
 
-# **delete_policy**
 > delete_policy(uuid)
 
 Delete a policy in the tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -89,6 +94,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**String**](.md)| ID of policy to delete | 
@@ -103,17 +109,18 @@ nil (empty response body)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## get_policy
 
-# **get_policy**
 > PolicyExtended get_policy(uuid)
 
 Get a policy in the tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -138,6 +145,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**String**](.md)| ID of policy to get | 
@@ -152,17 +160,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## list_policies
 
-# **list_policies**
 > PolicyPagination list_policies(opts)
 
 List the policies in the tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -195,6 +204,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **limit** | **Integer**| Parameter for selecting the amount of data returned. | [optional] [default to 10]
@@ -215,17 +225,18 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
- - **Accept**: application/json
+- **Content-Type**: Not defined
+- **Accept**: application/json
 
 
+## update_policy
 
-# **update_policy**
 > PolicyExtended update_policy(uuid, policy_in)
 
 Update a policy in the tenant
 
 ### Example
+
 ```ruby
 # load the gem
 require 'rbac-api-client'
@@ -251,6 +262,7 @@ end
 
 ### Parameters
 
+
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **uuid** | [**String**](.md)| ID of policy to update | 
@@ -266,8 +278,6 @@ Name | Type | Description  | Notes
 
 ### HTTP request headers
 
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-
+- **Content-Type**: application/json
+- **Accept**: application/json
 
