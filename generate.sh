@@ -1,5 +1,5 @@
-rm -rf openapi.json
-curl https://raw.githubusercontent.com/RedHatInsights/insights-rbac/master/docs/source/specs/openapi.json -o openapi.json
+# rm -rf openapi.json
+# curl https://raw.githubusercontent.com/RedHatInsights/insights-rbac/master/docs/source/specs/openapi.json -o openapi.json
 openapi-generator validate -i openapi.json
 rm -rf ./lib
 rm -rf ./spec

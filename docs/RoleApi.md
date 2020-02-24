@@ -29,11 +29,6 @@ RBACApiClient.configure do |config|
   # Configure HTTP basic authorization: basic_auth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
-
-  # Configure API key authorization: identity_auth
-  config.api_key['x-rh-identity'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['x-rh-identity'] = 'Bearer'
 end
 
 api_instance = RBACApiClient::RoleApi.new
@@ -61,7 +56,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic_auth](../README.md#basic_auth), [identity_auth](../README.md#identity_auth)
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 
@@ -85,11 +80,6 @@ RBACApiClient.configure do |config|
   # Configure HTTP basic authorization: basic_auth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
-
-  # Configure API key authorization: identity_auth
-  config.api_key['x-rh-identity'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['x-rh-identity'] = 'Bearer'
 end
 
 api_instance = RBACApiClient::RoleApi.new
@@ -116,7 +106,7 @@ nil (empty response body)
 
 ### Authorization
 
-[basic_auth](../README.md#basic_auth), [identity_auth](../README.md#identity_auth)
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 
@@ -140,11 +130,6 @@ RBACApiClient.configure do |config|
   # Configure HTTP basic authorization: basic_auth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
-
-  # Configure API key authorization: identity_auth
-  config.api_key['x-rh-identity'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['x-rh-identity'] = 'Bearer'
 end
 
 api_instance = RBACApiClient::RoleApi.new
@@ -172,7 +157,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic_auth](../README.md#basic_auth), [identity_auth](../README.md#identity_auth)
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 
@@ -196,11 +181,6 @@ RBACApiClient.configure do |config|
   # Configure HTTP basic authorization: basic_auth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
-
-  # Configure API key authorization: identity_auth
-  config.api_key['x-rh-identity'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['x-rh-identity'] = 'Bearer'
 end
 
 api_instance = RBACApiClient::RoleApi.new
@@ -234,7 +214,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic_auth](../README.md#basic_auth), [identity_auth](../README.md#identity_auth)
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 
@@ -258,11 +238,6 @@ RBACApiClient.configure do |config|
   # Configure HTTP basic authorization: basic_auth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
-
-  # Configure API key authorization: identity_auth
-  config.api_key['x-rh-identity'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['x-rh-identity'] = 'Bearer'
 end
 
 api_instance = RBACApiClient::RoleApi.new
@@ -300,7 +275,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-[basic_auth](../README.md#basic_auth), [identity_auth](../README.md#identity_auth)
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 
@@ -324,11 +299,6 @@ RBACApiClient.configure do |config|
   # Configure HTTP basic authorization: basic_auth
   config.username = 'YOUR USERNAME'
   config.password = 'YOUR PASSWORD'
-
-  # Configure API key authorization: identity_auth
-  config.api_key['x-rh-identity'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['x-rh-identity'] = 'Bearer'
 end
 
 api_instance = RBACApiClient::RoleApi.new
@@ -357,7 +327,7 @@ nil (empty response body)
 
 ### Authorization
 
-[basic_auth](../README.md#basic_auth), [identity_auth](../README.md#identity_auth)
+[basic_auth](../README.md#basic_auth)
 
 ### HTTP request headers
 

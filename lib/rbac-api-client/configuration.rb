@@ -200,13 +200,6 @@ module RBACApiClient
             key: 'Authorization',
             value: basic_auth_token
           },
-        'identity_auth' =>
-          {
-            type: 'api_key',
-            in: 'header',
-            key: 'x-rh-identity',
-            value: api_key_with_prefix('x-rh-identity')
-          },
       }
     end
 

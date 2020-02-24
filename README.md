@@ -61,11 +61,6 @@ RBACApiClient.configure do |config|
   # Configure HTTP basic authorization: basic_auth
   config.username = 'YOUR_USERNAME'
   config.password = 'YOUR_PASSWORD'
-
-  # Configure API key authorization: identity_auth
-  config.api_key['x-rh-identity'] = 'YOUR API KEY'
-  # Uncomment the following line to set a prefix for the API key, e.g. 'Bearer' (defaults to nil)
-  #config.api_key_prefix['x-rh-identity'] = 'Bearer'
 end
 
 api_instance = RBACApiClient::AccessApi.new
@@ -172,11 +167,4 @@ Class | Method | HTTP request | Description
 ### basic_auth
 
 - **Type**: HTTP basic authentication
-
-### identity_auth
-
-
-- **Type**: API key
-- **API key parameter name**: x-rh-identity
-- **Location**: HTTP header
 

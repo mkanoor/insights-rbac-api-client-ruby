@@ -69,7 +69,7 @@ module RBACApiClient
       return_type = opts[:return_type] || 'GroupWithPrincipalsAndRoles' 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -137,7 +137,7 @@ module RBACApiClient
       return_type = opts[:return_type] || 'InlineResponse200' 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -199,7 +199,7 @@ module RBACApiClient
       return_type = opts[:return_type] || 'GroupOut' 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -259,7 +259,7 @@ module RBACApiClient
       return_type = opts[:return_type] 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -326,7 +326,7 @@ module RBACApiClient
       return_type = opts[:return_type] 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -393,7 +393,7 @@ module RBACApiClient
       return_type = opts[:return_type] 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -453,7 +453,7 @@ module RBACApiClient
       return_type = opts[:return_type] || 'GroupWithPrincipalsAndRoles' 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -541,7 +541,7 @@ module RBACApiClient
       return_type = opts[:return_type] || 'GroupPagination' 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -628,7 +628,7 @@ module RBACApiClient
       return_type = opts[:return_type] || 'GroupRolesPagination' 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,
@@ -696,7 +696,7 @@ module RBACApiClient
       return_type = opts[:return_type] || 'GroupOut' 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,

@@ -89,21 +89,12 @@ module RBACApiClient
       url = build_request_url(path)
       http_method = http_method.to_sym.downcase
 
-      if @config.debugging
-        @config.logger.debug "Deafult Headers ~BEGIN~\n#{@default_headers.to_s}\n~END~\n"
-      end
       header_params = @default_headers.merge(opts[:header_params] || {})
       query_params = opts[:query_params] || {}
       form_params = opts[:form_params] || {}
 
-      if @config.debugging
-        @config.logger.debug "Header Params ~BEGIN~\n#{header_params.to_s}\n~END~\n"
-      end
       update_params_for_auth! header_params, query_params, opts[:auth_names]
 
-      if @config.debugging
-        @config.logger.debug "Updated Header Params ~BEGIN~\n#{header_params.to_s}\n~END~\n"
-      end
       # set ssl_verifyhosts option based on @config.verify_ssl_host (true/false)
       _verify_ssl_host = @config.verify_ssl_host ? 2 : 0
 

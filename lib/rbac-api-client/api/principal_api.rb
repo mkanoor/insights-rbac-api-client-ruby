@@ -76,7 +76,7 @@ module RBACApiClient
       return_type = opts[:return_type] || 'PrincipalPagination' 
 
       # auth_names
-      auth_names = opts[:auth_names] || ['basic_auth', 'identity_auth']
+      auth_names = opts[:auth_names] || ['basic_auth']
 
       new_options = opts.merge(
         :header_params => header_params,
